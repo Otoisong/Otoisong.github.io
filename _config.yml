@@ -8,10 +8,13 @@ plugins:
 
 #-------------------------------
 # General Site Settings
-title: Johnny Hopkins
-description: "Hi I'm Johnny, and I'm a Data Scientist.  My portfolio focuses on interesting projects I've recently undertaken, with a strong emphasis on business impact. Please visit my Github & LinkedIn pages (or download my Resume) by using the links below!"
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+title: Otobong Edemenang
+description: "Hello, I’m Otobong – a passionate Data Scientist with a focus on delivering impactful insights through data.
+Welcome to my portfolio, where I showcase a selection of innovative projects that I’ve worked on recently. My work combines advanced data science techniques with a strong emphasis on solving real-world problems and driving business outcomes.
+
+Explore my GitHub and LinkedIn to dive deeper into my projects, collaborations, and professional journey. You can also download my resume directly through the links below!"
+baseurl: "/isong" # the subpath of your site, e.g. /blog
+url: "https://edemenang.com" # the base hostname & protocol for your site, e.g. http://example.com
 
 #-------------------------------
 # About Section
@@ -22,8 +25,8 @@ avatar_image: /img/profile_picture.JPG
 
 #-------------------------------
 # Contact links
-linkedln: "https://linkedln.com/#" # Add your linkedln handle
-github: "https://github.com/#"  # Add your github handle
+linkedln: "www.linkedin.com/in/edemtechsolutions/#" # Add your linkedln handle
+github: "https://github.com/Otoisong/#"  # Add your github handle
 
 paginate: 6
 paginate_path: "/page/:num"

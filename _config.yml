@@ -13,8 +13,8 @@ description: "Hello, I’m Otobong – a passionate Data Scientist with a focus 
 Welcome to my portfolio, where I showcase a selection of innovative projects that I’ve worked on recently. My work combines advanced data science techniques with a strong emphasis on solving real-world problems and driving business outcomes.
 
 Explore my GitHub and LinkedIn to dive deeper into my projects, collaborations, and professional journey. You can also download my resume directly through the links below!"
-baseurl: "/isong" # the subpath of your site, e.g. /blog
-url: "https://edemenang.com" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
 #-------------------------------
 # About Section

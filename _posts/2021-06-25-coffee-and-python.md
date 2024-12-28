@@ -7,16 +7,14 @@ tags: [Python, Coffee]
 ---
 
 # My first project
-## is a blend of
-### coding in Python and
-#### my newfound
-##### love for Coffee!
-
+## is all about
+### how much
+#### I LOVE
+##### Python & Coffee!
 
 ---
 
-I’ve recently discovered my growing love for coffee, and I’m excited to see how it fuels my coding sessions.
-Here's a piece of code that captures my journey of coding in Python, with coffee now by my side (and I’m starting to enjoy it!).
+Firstly, I love Python so much, here is some code!
 
 ```
 my_love_for_python = 0
@@ -38,32 +36,34 @@ for day in lifetime:
     my_python_knowledge += 1  
 ```
 
-Here’s an unordered list of things I absolutely love about Python (and the growing appeal of coffee in my life):
+Here is an **unordered list** showing some things I love about Python
 
-For my work
-Data Analysis
-Data Visualization
-Machine Learning
-For personal interest
-Deep Learning
-Computer Vision
-Experimenting with coffee as my new coding partner
-Here’s an ordered list of what I’m discovering about coffee and why I’m starting to love it:
+* For my work
+    * Data Analysis
+    * Data Visualisation
+    * Machine Learning
+* For fun
+    * Deep Learning
+    * Computer Vision
+    * Projects about coffee
 
-The taste
-At first, I wasn’t sure, but I’m really getting into it now!
-The aroma
-The energy boost that keeps me coding for hours
-Now that I’ve embraced coffee, here’s the image from the top of this post, now included in the body of my work to show my excitement!
+Here is an _ordered list_ showing some things I love about coffee
+
+1. The smell
+    1. Especially in the morning, but also at all times of the day!
+2. The taste
+3. The fact I can run the 100m in approx. 9 seconds after having 4 cups in quick succession
+
+I love Python & Coffee so much, here is that picture from the top of my project AGAIN, but this time, in the BODY of my project!
 
 ![alt text](/img/posts/coffee_python.jpg "Coffee & Python - I love them!")
 
-This image is linked directly from my GitHub repository, though I could also easily link images from online sources!
+The above image is just linked to the actual file in my Github, but I could also link to images online, using the URL!
 
-A quick line break here helps me refocus—especially after a few cups of coffee that have me coding non-stop.
+A line break, like this one below - helps me make sense of what I'm reading, especially when I've had so much coffee that my vision goes a little blurry
+
 ---
 
-I could add more fun elements like links, tables, or quotes, but for now, I’m going to take a short break to enjoy another cup of coffee.
-
+I could also add things to my project like links, tables, quotes, and HTML blocks - but I'm starting to get a cracking headache.  Must be coffee time.
 coffee_and_python.txt
 Displaying coffee_and_python.txt.

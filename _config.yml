@@ -25,7 +25,7 @@ avatar_image: /img/Otobong.jpg
 
 #-------------------------------
 # Contact links
-linkedln: "www.linkedin.com/in/edemtechsolutions" # Add your linkedln handle
+linkedln: "https://www.linkedin.com/in/edemtechsolutions/#" # Add your linkedln handle
 github: "https://github.com/Otoisong/#"  # Add your github handle
 
 paginate: 6

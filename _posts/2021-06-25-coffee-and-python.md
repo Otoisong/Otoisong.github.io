@@ -1,4 +1,3 @@
-
 ---
 layout: post
 title: Coffee & Python
@@ -65,5 +64,3 @@ A line break, like this one below - helps me make sense of what I'm reading, esp
 ---
 
 I could also add things to my project like links, tables, quotes, and HTML blocks - but I'm starting to get a cracking headache.  Must be coffee time.
-coffee_and_python.txt
-Displaying coffee_and_python.txt.

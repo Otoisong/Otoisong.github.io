@@ -5,46 +5,47 @@ image: "/posts/primes_image.jpeg"
 tags: [Python, Primes]
 ---
 
-In this post I'm going to run through a function in Python that can quickly find all the Prime numbers below a given value.  For example, if I passed the function a value of 100, it would find all the prime numbers below 100!
+In this post, I’ll demonstrate a Python function designed to efficiently identify all prime numbers below a specified value. For instance, if you provide the function with the value 100, it will return all the prime numbers less than 50!
 
-If you're not sure what a Prime number is, it is a number that can only be divided wholly by itself and one so 7 is a prime number as no other numbers apart from 7 or 1 divide cleanly into it 8 is not a prime number as while eight and one divide into it, so do 2 and 4
+If you're unsure what a prime number is, it’s a number that can only be divided evenly by 1 and itself. For example, 5 is a prime number because no numbers other than 1 and 5 divide into it without leaving a remainder. On the other hand, 6 is not a prime number, as it can also be divided evenly by 2 and 3, in addition to 1 and 5.
 
-Let's get into it!
+Let's dive in!
 
 ---
 
-First let's start by setting up a variable that will act as the upper limit of numbers we want to search through. We'll start with 20, so we're essentially wanting to find all prime numbers that exist that are equal to or smaller than 20
+First, let’s set up a variable to define the upper limit of numbers we want to search through. We’ll start with 20, meaning we want to find all prime numbers less than or equal to 20.
 
 ```ruby
 n = 20
 ```
 
-The smallest true Prime number is 2, so we want to start by creating a list of numbers than need checking so every integer between 2 and what we set above as the upper bound which in this case was 20. We use n+1 as the range logic is not inclusive of the upper limit we set there
+The smallest prime number is 2, so we’ll start by creating a collection of numbers to check—every integer from 2 up to the upper limit we defined earlier (in this case, 20). Since the range function in Python excludes the upper limit, we use n+1 to include 20 in the range.
 
-Instead of using a list, we're going to use a set.  The reason for this is that sets have some special functions that will allow us to eliminate non-primes during our search.  You'll see what I mean soon...
+Instead of using a list, we’ll use a set. Sets have special properties that will make it easier to remove non-prime numbers during our search. You’ll see how this works shortly!
 
 ```ruby
 number_range = set(range(2, n+1))
 ```
 
-Let's also create a place where we can store any primes we discover.  A list will be perfect for this job
+
+Let’s also set up a place to store the prime numbers we find. A list will be ideal for this purpose.
 
 ```ruby
 primes_list = []
 ```
 
-We're going to end up using a while loop to iterate through our list and check for primes, but before we construct that I always it valuable to code up the logic and iterate manually first.  This means I can check that it is working correctly before I set it off to run through everything on it's own
+We’ll use a while loop to iterate through our set and check for primes, but before constructing the loop, I find it useful to manually code the logic and iterate through the numbers first. This allows me to verify that the process is working correctly before automating the entire check.
 
-So, we have our set of numbers (called number_range to check all integers between 2 and 20. Let's extract the first number from that set that we want to check as to whether it's a prime. When we check the value we're going to check if it is a prime...if it is, we're going to add it to our list called primes_list...if it isn't a prime we don't want to keep it
+So, we have our set of numbers (called number_range), which contains all integers between 2 and 20. Let’s start by extracting the first number from the set to check if it’s a prime. If the number is a prime, we’ll add it to our list called primes_list. If it isn’t a prime, we won’t keep it.
 
-There is a method which will remove an element from a list or set and provide that value to us, and that method is called *pop*
+To remove an element from a set or list and retrieve its value, we can use the *pop* method.
 
 ```ruby
 print(number_range)
 >>> {2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20}
 ```
-If we use pop, and assign this to the object called **prime** it will *pop* the first element from the set out of **number_range**, and into **prime**
 
+If we use the pop method and assign the result to an object called **prime**, it will remove the first element from the **number_range** set and assign it to **prime**.
 ```ruby
 prime = number_range.pop()
 print(prime)
@@ -53,7 +54,7 @@ print(number_range)
 >>> {3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20}
 ```
 
-Now, we know that the very first value in our range is going to be a prime...as there is nothing smaller than it so therefore nothing else could possible divide evenly into it.  As we know it's a prime, let's add it to our list of primes...
+Since we know that the very first value in our range is a prime (as there’s nothing smaller than it to divide evenly), we can confidently add it to our list of primes.
 
 ```ruby
 primes_list.append(prime)
@@ -61,30 +62,30 @@ print(primes_list)
 >>> [2]
 ```
 
-Now we're going to do a special trick to check our remaining number_range for non-primes. For the prime number we just checked (in this first case it was the number 2) we want to generate all the multiples of that up to our upper range (in our case, 20).
+Now, we’re going to perform a special step to check the remaining numbers in our number_range for non-primes. For the prime we just checked (in this case, 2), we’ll generate all its multiples up to the upper limit (20 in our case).
 
-We're going to again use a set rather than a list, because it allows us some special functionality that we'll use soon, which is the magic of this approach.
-
+We’ll use a set again, rather than a list, because sets offer some unique functionality that will be useful in this approach, and this is where the magic happens.
 ```ruby
 multiples = set(range(prime*2, n+1, prime))
 ```
 
-Remember that when created a range the syntax is range(start, stop, step). For the starting point - we don't need our number as that has already been added as a prime, so let's start our range of multiples at 2 * our number as that is the first multiple, in our case, our number is 2 so the first multiple will be 4. If the number we were checking was 3 then the first multiple would be 6 - and so on.
+Remember, when creating a range, the syntax is range(start, stop, step). For the starting point, we don’t need to include our number since it has already been added as a prime. Instead, we’ll start the range of multiples at 2 * our number, which is the first multiple. For example, if our number is 2, the first multiple will be 4. If we were checking 3, the first multiple would be 6, and so on.
 
-For the stopping point of our range - we specify that we want our range to go up to 20, so we use n+1 to specify that we want 20 to be included.
+For the stopping point of the range, we want the range to go up to 20, so we use n+1 to ensure 20 is included.
 
-Now, the **step** is key here.  We want multiples of our number, so we want to increment in steps *of our* number so we can put in **prime** here
+Now, the **step** is crucial here. Since we’re looking for multiples of our number, we want to increment by the value of the number itself. Therefore, we’ll use **prime** for the step value.
 
-Lets have a look at our list of multiples...
+Let’s take a look at our list of multiples…
 
 ```ruby
 print(multiples)
 >>> {4, 6, 8, 10, 12, 14, 16, 18, 20}
 ```
 
-The next part is the magic I spoke about earlier, we're using the special set functionality **difference_update** which removes any values from our number range that are multiples of the number we just checked. The reason we're doing this is because if a number is a multiple of anything other than 1 or itself then it is **not a prime number** and can remove it from the list to be checked.
 
-Before we apply the **difference_update**, let's look at our two sets.
+Here comes the magic I mentioned earlier: we're using the special set functionality, **difference_update**, which removes any values from our number_range that are multiples of the number we just checked. The reason we do this is that if a number is a multiple of anything other than 1 or itself, it is **not a prime number**, and we can safely remove it from the list of numbers to be checked.
+
+Before applying **difference_update**, let’s take a look at our two sets
 
 ```ruby
 print(number_range)
@@ -104,15 +105,15 @@ print(number_range)
 >>> {3, 5, 7, 9, 11, 13, 15, 17, 19}
 ```
 
-When we look at our number range now, all values that were also present in the multiples set have been removed as we *know* they were not primes
+Now, when we look at our number_range, all the values that were also present in the multiples set have been removed, as we know they are not prime numbers.
 
-This is amazing!  We've made a massive reduction to the pool of numbers that need to be tested so this is really efficient. It also means the smallest number in our range *is a prime number* as we know nothing smaller than it divides into it...and this means we can run all that logic again from the top!
+This is fantastic! We've significantly reduced the pool of numbers that need to be tested, making the process much more efficient. It also means that the smallest number in our range is guaranteed to be a prime, as we know nothing smaller than it divides evenly into it. This allows us to repeat the logic from the top.
 
-Whenever you can run sometime over and over again, a while loop is often a good solution.
+Whenever you need to repeat a process until a condition is met, a while loop is often a great solution.
 
-Here is the code, with a while loop doing the hard work of updated the number list and extracting primes until the list is empty.
+Here’s the code, with a while loop doing the heavy lifting of updating the number list and extracting primes until the list is empty.
 
-Let's run it for any primes below 1000...
+Let’s run it to find all primes below 1000…
 
 ```ruby
 n = 1000
@@ -188,16 +189,13 @@ I hoped you enjoyed learning about Primes, and one way to search for them using 
 ---
 
 ###### Important Note: Using pop() on a Set in Python
+In practical applications, it's important to consider the behavior of the pop() method when used on a Set, as it can sometimes be inconsistent.
 
-In the real world - we would need to make a consideration around the pop() method when used on a Set as in some cases it can be a bit inconsistent.
+The pop() method typically extracts an arbitrary element from the Set. While it often retrieves the lowest element, Sets in Python are unordered. Internally, the items are stored based on their hash values, which allows for fast retrieval. This hashing mechanism means we can't fully rely on pop() returning the lowest value. In rare cases, the hash may cause a different element to be returned.
 
-The pop() method will usually extract the lowest element of a Set. Sets however are, by definition, unordered. The items are stored internally with some order, but this internal order is determined by the hash code of the key (which is what allows retrieval to be so fast). 
+Although in this case we’re working on a fun exercise, it's worth noting this potential inconsistency when using Sets and pop() in Python going forward.
 
-This hashing method means that we can't 100% rely on it successfully getting the lowest value. In very rare cases, the hash provides a value that is not the lowest.
-
-Even though here, we're just coding up something fun - it is most definitely a useful thing to note when using Sets and pop() in Python in the future!
-
-The simplest solution to force the minimum value to be used is to replace the line...
+To ensure we always get the minimum value, we can replace the line...
 
 ```ruby
 prime = number_range.pop()
@@ -210,8 +208,6 @@ prime = min(sorted(number_range))
 number_range.remove(prime)
 ```
 
-...where we firstly force the identification of the lowest number in the number_range into our prime variable, and following that we remove it.
+...where we first identify the lowest number in number_range and assign it to our prime variable, then remove it.
 
-However, because we have to sort the list for each iteration of the loop in order to get the minimum value, it's slightly slower than what we saw with pop()!
-
-
+However, because we need to sort the set on each iteration of the loop to find the minimum value, this approach is slightly slower than using pop(), which would typically be faster due to its constant time complexity for removing an arbitrary element from a set.

@@ -5,7 +5,7 @@ image: "/posts/primes_image.jpeg"
 tags: [Python, Primes]
 ---
 
-In this post, I’ll demonstrate a Python function designed to efficiently identify all prime numbers below a specified value. For instance, if you provide the function with the value 100, it will return all the prime numbers less than 50!
+In this post, I’ll demonstrate a Python function designed to efficiently identify all prime numbers below a specified value. For instance, if you provide the function with the value 50, it will return all the prime numbers less than 50!
 
 If you're unsure what a prime number is, it’s a number that can only be divided evenly by 1 and itself. For example, 5 is a prime number because no numbers other than 1 and 5 divide into it without leaving a remainder. On the other hand, 6 is not a prime number, as it can also be divided evenly by 2 and 3, in addition to 1 and 5.
 
